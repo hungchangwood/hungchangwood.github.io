@@ -11041,7 +11041,7 @@ header.masthead h1, header.masthead .h1 {
   width: 2px;
   margin-left: -1.5px;
   content: "";
-  background-color: #e9ecef;
+  background-color: #000;
 }
 .timeline > li {
   position: relative;
@@ -11083,7 +11083,7 @@ header.masthead h1, header.masthead .h1 {
   margin-left: 0;
   text-align: center;
   color: white;
-  border: 7px solid #e9ecef;
+  border: 4px solid #343233;
   border-radius: 100%;
   background-color: #ffc800;
 }
@@ -11136,7 +11136,7 @@ header.masthead h1, header.masthead .h1 {
     float: left;
     width: 41%;
     padding: 0 20px 20px 30px;
-    text-align: right;
+    text-align: left;
   }
   .timeline > li .timeline-image {
     left: 50%;
