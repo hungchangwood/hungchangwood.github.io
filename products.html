@@ -19,11 +19,64 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const products = [
+                { folder: "基礎用材", images: ["圓柱.JPG", "景觀材.JPG", "板料.JPG", "板木.JPG", "角仔.JPG"] },
+                { folder: "手工傢俱", images: ["可調整沙灘椅.JPG", "手工沐浴桶-2.jpg", "木桌1.jpg", "木桌2.jpg", "木桌3-2.jpg", "木桌4.jpg", "木桌5.jpg"] },
+                { folder: "藝品", images: ["原木吧檯.jpg", "原木大椅凳.jpg", "古風桌椅.jpg", "古風鎖櫃.jpg", "子孫滿堂.jpg", "子孫滿堂2.jpg", "小椅凳.jpg", "小豬.JPG", "小豬2.JPG", "木枕.jpg", "樹瘤屏風.JPG", "樹瘤屏風2.jpg", "毛筆.JPG", "聚寶盆.jpg", "衛生紙盒-2.jpg", "觀音.jpg", "象雕課桌.jpg", "財神爺.jpg", "財神爺2.jpg"] },
+                { folder: "裝潢工程", images: ["天花板.jpg", "室內窗沿.jpg", "房間1.jpg", "房間2.JPG", "室外牆壁.jpg", "紅豆杉手扶梯.jpg"] },
+                { folder: "古蹟用材", images: ["古蹟用材1.JPG", "古蹟用材2.JPG", "古蹟用材3.JPG", "楊家古宅1.JPG", "楊家古宅2.JPG", "楊家古宅3.JPG", "楊家古宅4.jpg", "楊家古宅5.jpg", "楊家古宅6.jpg", "水交社1.JPG", "水交社2.JPG", "水交社3.JPG", "水交社4.jpg", "水交社5.JPG", "水交社6.JPG", "水交社7.jpg", "水交社8.JPG"] },
+                { folder: "木屋用材", images: ["特殊樑柱材1.jpg", "特殊樑柱材2.jpg", "特殊樑柱材3.jpg", "特殊樑柱材4.jpg"] },
+                { folder: "特殊用材", images: ["高壓墊木.jpg"] },
+                { folder: "認證資訊", images: ["認證書1.jpeg", "認證書2.jpeg"] }
+            ];
+
+            const container = document.querySelector("#portfolio2 .tab-content");
+
+            products.forEach((product, index) => {
+                const tabPane = document.createElement("div");
+                tabPane.className = `tab-pane fade ${index === 0 ? "show active" : ""}`;
+                tabPane.id = `pills-${index}`;
+                tabPane.setAttribute("role", "tabpanel");
+                tabPane.setAttribute("aria-labelledby", `pills-${index}-tab`);
+
+                const rowDiv = document.createElement("div");
+                rowDiv.className = "row g-0";
+
+                product.images.forEach(image => {
+                    const colDiv = document.createElement("div");
+                    colDiv.className = "col-lg-4 col-sm-6";
+
+                    const anchor = document.createElement("a");
+                    anchor.className = "portfolio-box";
+                    anchor.href = `/products_image/${product.folder}/${image}`;
+                    anchor.title = image.split('.')[0];
+
+                    const img = document.createElement("img");
+                    img.className = "img-fluid";
+                    img.loading = "lazy";
+                    img.src = `/products_image/${product.folder}/${image}`;
+                    img.alt = "...";
+
+                    const captionDiv = document.createElement("div");
+                    captionDiv.className = "portfolio-box-caption";
+                    
+                    anchor.appendChild(img);
+                    anchor.appendChild(captionDiv);
+                    colDiv.appendChild(anchor);
+                    rowDiv.appendChild(colDiv);
+                });
+
+                tabPane.appendChild(rowDiv);
+                container.appendChild(tabPane);
+            });
+        });
+    </script>
 </head>
 
 <body id="page-top">
     <!-- Navigation-->
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" id="mainNav">
         <div class="container-fluid px-4 px-lg-5">
             <a class="navbar-brand" href="index.html#page-top">宏昌木材行</a>
@@ -41,7 +94,6 @@
                             <li><a class="dropdown-item" href="index.html#about">宏昌歷史</a></li>
                             <li><a class="dropdown-item" href="index.html#services">經營理念</a></li>
                             <li><a class="dropdown-item" href="index.html#team">經營團隊</a></li>
-
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -64,7 +116,6 @@
                                     </li>
                                 </ul>
                             </li>
-
                             <li>
                                 <a class="dropdown-item" href="#">手工傢俱 </a>
                                 <ul class="dropdown-menu dropdown-submenu">
@@ -129,10 +180,8 @@
                             <li>
                                 <a class="dropdown-item" href="#">認證資訊</a>
                             </li>
-
                         </ul>
                     </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href=".\machines.html#" id="navbarDarkDropdownMenuLink3"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -168,12 +217,10 @@
         </div>
     </nav>
     <!-- Portfolio-->
-
     <section class="page-section bg-light" id="portfolio">
         <h2 class="text-center mt-0">我們的產品</h2>
         <hr class="divider" />
         <div id="portfolio2">
-
             <ul class="nav nav-tabs mb-3 justify-content-center" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-0-tab" data-bs-toggle="pill" data-bs-target="#pills-0"
@@ -205,877 +252,15 @@
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-7-tab" data-bs-toggle="pill" data-bs-target="#pills-7"
-                        type="button" role="tab" aria-controls="pills-6" aria-selected="false">認證資訊</button>
+                        type="button" role="tab" aria-controls="pills-7" aria-selected="false">認證資訊</button>
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
-                <!-- 基礎用材 -->
-                <div class="tab-pane fade show active" id="pills-0" role="tabpanel" aria-labelledby="pills-0-tab">
-                    <!-- Call to action-->
-                    <div class="container-fluid p-0">
-                        <div class="row g-0">
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/基礎用材/圓柱.JPG"
-                                    title="圓柱">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/基礎用材/圓柱.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">基礎用材</div>
-                                        <div class="project-name">圓柱</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/基礎用材/景觀材.JPG"
-                                    title="景觀材">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/基礎用材/景觀材.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">基礎用材</div>
-                                        <div class="project-name">景觀材</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/基礎用材/板料.JPG"
-                                    title="板料">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/基礎用材/板料.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">基礎用材</div>
-                                        <div class="project-name">板料</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/基礎用材/板木.JPG"
-                                    title="板木">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/基礎用材/板木.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">基礎用材</div>
-                                        <div class="project-name">板木</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/基礎用材/角仔.JPG"
-                                    title="角仔">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/基礎用材/角仔.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">基礎用材</div>
-                                        <div class="project-name">角仔</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-                <!-- 手工家具 -->
-                <div class="tab-pane fade" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
-                    <div class="container-fluid p-0">
-                        <div class="row g-0">
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/手工傢俱/可調整沙灘椅.JPG"
-                                    title="可調整沙灘椅">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/手工傢俱/可調整沙灘椅.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">手工傢俱</div>
-                                        <div class="project-name">可調整沙灘椅</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/手工傢俱/手工沐浴桶-2.jpg"
-                                    title="手工沐浴桶">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/手工傢俱/手工沐浴桶-2.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">手工傢俱</div>
-                                        <div class="project-name">手工沐浴桶</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/手工傢俱/木桌1.jpg"
-                                    title="木桌">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/手工傢俱/木桌1.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">手工傢俱</div>
-                                        <div class="project-name">木桌</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/手工傢俱/木桌2.jpg"
-                                    title="木桌">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/手工傢俱/木桌2.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">手工傢俱</div>
-                                        <div class="project-name">木桌</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/手工傢俱/木桌3-2.jpg"
-                                    title="木桌">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/手工傢俱/木桌3-2.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">手工傢俱</div>
-                                        <div class="project-name">木桌</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/手工傢俱/木桌4.jpg"
-                                    title="木桌">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/手工傢俱/木桌4.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">手工傢俱</div>
-                                        <div class="project-name">木桌</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/手工傢俱/木桌5.jpg"
-                                    title="木桌">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/手工傢俱/木桌5.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">手工傢俱</div>
-                                        <div class="project-name">木桌</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- 藝品 -->
-                <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
-                    <div class="container-fluid p-0">
-                        <div class="row g-0">
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/原木吧檯.jpg"
-                                    title="原木吧臺">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/原木吧檯.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">原木吧臺</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/原木大椅凳.jpg"
-                                    title="原木大椅凳">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/原木大椅凳.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">原木大椅凳</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/古風桌椅.jpg"
-                                    title="古風桌椅">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/古風桌椅.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">古風桌椅</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/古風鎖櫃.jpg"
-                                    title="古風鎖櫃">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/古風鎖櫃.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">古風鎖櫃</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/子孫滿堂.jpg"
-                                    title="子孫滿堂">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/子孫滿堂.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">子孫滿堂</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/子孫滿堂2.jpg"
-                                    title="子孫滿堂2">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/子孫滿堂2.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">子孫滿堂2</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/小椅凳.jpg"
-                                    title="小椅凳">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/小椅凳.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">小椅凳</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/小豬.JPG"
-                                    title="小豬">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/小豬.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">小豬</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/小豬2.JPG"
-                                    title="小豬2">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/小豬2.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">小豬2</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/木枕.jpg"
-                                    title="木枕">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/木枕.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">木枕</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/樹瘤屏風.JPG"
-                                    title="樹瘤屏風">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/樹瘤屏風.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">樹瘤屏風</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/樹瘤屏風2.jpg"
-                                    title="樹瘤屏風2">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/樹瘤屏風2.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">樹瘤屏風2</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/毛筆.JPG"
-                                    title="毛筆">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/毛筆.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">毛筆</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/聚寶盆.jpg"
-                                    title="聚寶盆">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/聚寶盆.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">聚寶盆</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/衛生紙盒-2.jpg"
-                                    title="衛生紙盒2">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/衛生紙盒-2.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">衛生紙盒2</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/觀音.jpg"
-                                    title="觀音">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/觀音.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">觀音</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/象雕課桌.jpg"
-                                    title="象雕課桌">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/象雕課桌.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">象雕課桌</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/財神爺.jpg"
-                                    title="財神爺">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/財神爺.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">財神爺</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/藝品/財神爺2.jpg"
-                                    title="財神爺">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/藝品/財神爺2.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">藝品</div>
-                                        <div class="project-name">財神爺2</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- 裝潢工程 -->
-                <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab">
-                    <div class="container-fluid p-0">
-                        <div class="row g-0">
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/裝潢工程/天花板.jpg"
-                                    title="天花板">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/裝潢工程/天花板.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">裝潢工程</div>
-                                        <div class="project-name">天花板</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/裝潢工程/室內窗沿.jpg"
-                                    title="室內窗沿">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/裝潢工程/室內窗沿.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">裝潢工程</div>
-                                        <div class="project-name">室內窗沿</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/裝潢工程/房間1.jpg"
-                                    title="房間1">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/裝潢工程/房間1.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">裝潢工程</div>
-                                        <div class="project-name">房間1</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/裝潢工程/房間2.JPG"
-                                    title="房間2">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/裝潢工程/房間2.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">裝潢工程</div>
-                                        <div class="project-name">房間2</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/裝潢工程/室外牆壁.jpg"
-                                    title="室外牆壁">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/裝潢工程/室外牆壁.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">裝潢工程</div>
-                                        <div class="project-name">室外牆壁</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/裝潢工程/紅豆杉手扶梯.jpg"
-                                    title="紅豆杉手扶梯">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/裝潢工程/紅豆杉手扶梯.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">裝潢工程</div>
-                                        <div class="project-name">紅豆杉手扶梯</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- 古積用材 -->
-                <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab">
-                    <div class="container-fluid p-0">
-                        <div class="row g-0">
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/古蹟用材1.JPG"
-                                    title="古蹟用材1">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/古蹟用材1.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">古蹟用材1</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/古蹟用材2.JPG"
-                                    title="古蹟用材2">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/古蹟用材2.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">古蹟用材2</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/古蹟用材3.JPG"
-                                    title="古蹟用材3">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/古蹟用材3.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">古蹟用材3</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/楊家古宅1.JPG"
-                                    title="楊家古宅1">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/楊家古宅1.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">楊家古宅1</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/楊家古宅2.JPG"
-                                    title="楊家古宅2">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/楊家古宅2.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">楊家古宅2</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/楊家古宅3.JPG"
-                                    title="楊家古宅3">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/楊家古宅3.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">楊家古宅3</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/楊家古宅4.jpg"
-                                    title="楊家古宅4">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/楊家古宅4.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">楊家古宅4</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/楊家古宅5.jpg"
-                                    title="楊家古宅5">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/楊家古宅5.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">楊家古宅5</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/楊家古宅6.jpg"
-                                    title="楊家古宅6">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/楊家古宅6.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">楊家古宅6</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/水交社1.JPG"
-                                    title="水交社1">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/水交社1.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">水交社1</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/水交社2.JPG"
-                                    title="水交社2">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/水交社2.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">水交社2</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/水交社3.JPG"
-                                    title="水交社3">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/水交社3.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">水交社3</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/水交社4.jpg"
-                                    title="水交社4">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/水交社4.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">水交社4</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/水交社5.JPG"
-                                    title="水交社5">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/水交社5.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">水交社5</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/水交社6.JPG"
-                                    title="水交社6">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/水交社6.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">水交社6</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/水交社7.jpg"
-                                    title="水交社7">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/水交社7.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">水交社7</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/古蹟用材/水交社8.jpg"
-                                    title="水交社8">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/古蹟用材/水交社8.JPG"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">古積用材</div>
-                                        <div class="project-name">水交社8</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- 木屋用材 -->
-                <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5-tab">
-                    <div class="container-fluid p-0">
-                        <div class="row g-0">
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/木屋用材/02.jpg"
-                                    title="特殊梁柱料">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/木屋用材/02.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">木屋用材</div>
-                                        <div class="project-name">特殊梁柱料</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/木屋用材/03.jpg"
-                                    title="特殊梁柱料">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/木屋用材/03.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">木屋用材</div>
-                                        <div class="project-name">特殊梁柱料</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/木屋用材/04.jpg"
-                                    title="特殊梁柱料">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/木屋用材/04.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">木屋用材</div>
-                                        <div class="project-name">特殊梁柱料</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/木屋用材/05.jpg"
-                                    title="特殊梁柱料">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/木屋用材/05.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">木屋用材</div>
-                                        <div class="project-name">特殊梁柱料</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- 特殊用材 -->
-                <div class="tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6-tab">
-                    <div class="container-fluid p-0">
-                        <div class="row g-0">
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box"
-                                    href="/products_image/木屋用材/01.jpg"
-                                    title="高壓墊木">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/木屋用材/01.jpg"
-                                        alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">特殊用材</div>
-                                        <div class="project-name">高壓墊木</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- 認證資訊 -->
-                <div class="tab-pane fade" id="pills-7" role="tabpanel" aria-labelledby="pills-7-tab">
-                    <div class="container-fluid p-0">
-                        <div class="row g-0">
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="/products_image/認證資訊/認證書1.jpeg" title="認證書">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/認證資訊/認證書1.jpeg" alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">認證資訊</div>
-                                        <div class="project-name">認證書</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="/products_image/認證資訊/認證書1.jpeg" title="認證書">
-                                    <img class="img-fluid" loading="lazy"
-                                        src="/products_image/認證資訊/認證書2.jpeg" alt="..." />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">認證資訊</div>
-                                        <div class="project-name">認證書</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
+                <!-- JavaScript will dynamically insert tab-pane elements here -->
             </div>
         </div>
     </section>
+    <!-- Contact-->
 
     <!-- Contact-->
     <section class="page-section" id="contact">
