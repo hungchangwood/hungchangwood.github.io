@@ -27,8 +27,8 @@
                 { folder: "藝品", images: ["原木吧檯.jpg", "原木大椅凳.jpg", "古風桌椅.jpg", "古風鎖櫃.jpg", "子孫滿堂.jpg", "子孫滿堂2.jpg", "小椅凳.jpg", "小豬.JPG", "小豬2.JPG", "木枕.jpg", "樹瘤屏風.JPG", "樹瘤屏風2.jpg", "毛筆.JPG", "聚寶盆.jpg", "衛生紙盒-2.jpg", "觀音.jpg", "象雕課桌.jpg", "財神爺.jpg", "財神爺2.jpg"] },
                 { folder: "裝潢工程", images: ["天花板.jpg", "室內窗沿.jpg", "房間1.jpg", "房間2.JPG", "室外牆壁.jpg", "紅豆杉手扶梯.jpg"] },
                 { folder: "古蹟用材", images: ["古蹟用材1.JPG", "古蹟用材2.JPG", "古蹟用材3.JPG", "楊家古宅1.JPG", "楊家古宅2.JPG", "楊家古宅3.JPG", "楊家古宅4.jpg", "楊家古宅5.jpg", "楊家古宅6.jpg", "水交社1.JPG", "水交社2.JPG", "水交社3.JPG", "水交社4.jpg", "水交社5.JPG", "水交社6.JPG", "水交社7.jpg", "水交社8.JPG"] },
-                { folder: "木屋用材", images: ["02.jpg", "03.jpg", "04.jpg", "05.jpg"] },
-                { folder: "特殊用材", images: ["01.jpg"] },
+                { folder: "木屋用材", images: ["特殊樑柱材1.jpg", "特殊樑柱材2.jpg", "特殊樑柱材3.jpg", "特殊樑柱材4.jpg"] },
+                { folder: "特殊用材", images: ["高壓墊木.jpg"] },
                 { folder: "認證資訊", images: ["認證書1.jpeg", "認證書2.jpeg"] }
             ];
 
@@ -62,16 +62,6 @@
                     const captionDiv = document.createElement("div");
                     captionDiv.className = "portfolio-box-caption";
 
-                    const categoryDiv = document.createElement("div");
-                    categoryDiv.className = "project-category text-white-50";
-                    categoryDiv.textContent = product.folder;
-
-                    const nameDiv = document.createElement("div");
-                    nameDiv.className = "project-name";
-                    nameDiv.textContent = image.split('.')[0];
-
-                    // captionDiv.appendChild(categoryDiv);
-                    // captionDiv.appendChild(nameDiv);
                     anchor.appendChild(img);
                     anchor.appendChild(captionDiv);
                     colDiv.appendChild(anchor);
