@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>宏昌木材行</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+        rel="stylesheet" type="text/css" />
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const products = [
+                { folder: "基礎用材", images: ["圓柱.JPG", "景觀材.JPG", "板料.JPG", "板木.JPG", "角仔.JPG"] },
+                { folder: "手工傢俱", images: ["可調整沙灘椅.JPG", "手工沐浴桶-2.jpg", "木桌1.jpg", "木桌2.jpg", "木桌3-2.jpg", "木桌4.jpg", "木桌5.jpg"] },
+                { folder: "藝品", images: ["原木吧檯.jpg", "原木大椅凳.jpg", "古風桌椅.jpg", "古風鎖櫃.jpg", "子孫滿堂.jpg", "子孫滿堂2.jpg", "小椅凳.jpg", "小豬.JPG", "小豬2.JPG", "木枕.jpg", "樹瘤屏風.JPG", "樹瘤屏風2.jpg", "毛筆.JPG", "聚寶盆.jpg", "衛生紙盒-2.jpg", "觀音.jpg", "象雕課桌.jpg", "財神爺.jpg", "財神爺2.jpg"] },
+                { folder: "裝潢工程", images: ["天花板.jpg", "室內窗沿.jpg", "房間1.jpg", "房間2.JPG", "室外牆壁.jpg", "紅豆杉手扶梯.jpg"] },
+                { folder: "古蹟用材", images: ["古蹟用材1.JPG", "古蹟用材2.JPG", "古蹟用材3.JPG", "楊家古宅1.JPG", "楊家古宅2.JPG", "楊家古宅3.JPG", "楊家古宅4.jpg", "楊家古宅5.jpg", "楊家古宅6.jpg", "水交社1.JPG", "水交社2.JPG", "水交社3.JPG", "水交社4.jpg", "水交社5.JPG", "水交社6.JPG", "水交社7.jpg", "水交社8.JPG"] },
+                { folder: "木屋用材", images: ["02.jpg", "03.jpg", "04.jpg", "05.jpg"] },
+                { folder: "特殊用材", images: ["01.jpg"] },
+                { folder: "認證資訊", images: ["認證書1.jpeg", "認證書2.jpeg"] }
+            ];
+
+            const container = document.querySelector("#portfolio2 .tab-content");
+
+            products.forEach((product, index) => {
+                const tabPane = document.createElement("div");
+                tabPane.className = `tab-pane fade ${index === 0 ? "show active" : ""}`;
+                tabPane.id = `pills-${index}`;
+                tabPane.setAttribute("role", "tabpanel");
+                tabPane.setAttribute("aria-labelledby", `pills-${index}-tab`);
+
+                const rowDiv = document.createElement("div");
+                rowDiv.className = "row g-0";
+
+                product.images.forEach(image => {
+                    const colDiv = document.createElement("div");
+                    colDiv.className = "col-lg-4 col-sm-6";
+
+                    const anchor = document.createElement("a");
+                    anchor.className = "portfolio-box";
+                    anchor.href = `/products_image/${product.folder}/${image}`;
+                    anchor.title = image.split('.')[0];
+
+                    const img = document.createElement("img");
+                    img.className = "img-fluid";
+                    img.loading = "lazy";
+                    img.src = `/products_image/${product.folder}/${image}`;
+                    img.alt = "...";
+
+                    const captionDiv = document.createElement("div");
+                    captionDiv.className = "portfolio-box-caption";
+
+                    const categoryDiv = document.createElement("div");
+                    categoryDiv.className = "project-category text-white-50";
+                    categoryDiv.textContent = product.folder;
+
+                    const nameDiv = document.createElement("div");
+                    nameDiv.className = "project-name";
+                    nameDiv.textContent = image.split('.')[0];
+
+                    captionDiv.appendChild(categoryDiv);
+                    captionDiv.appendChild(nameDiv);
+                    anchor.appendChild(img);
+                    anchor.appendChild(captionDiv);
+                    colDiv.appendChild(anchor);
+                    rowDiv.appendChild(colDiv);
+                });
+
+                tabPane.appendChild(rowDiv);
+                container.appendChild(tabPane);
+            });
+        });
+    </script>
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" id="mainNav">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html#page-top">宏昌木材行</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive2" aria-controls="navbarResponsive2" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive2">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink1" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            關於宏昌
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink1">
+                            <li><a class="dropdown-item" href="index.html#about">宏昌歷史</a></li>
+                            <li><a class="dropdown-item" href="index.html#services">經營理念</a></li>
+                            <li><a class="dropdown-item" href="index.html#team">經營團隊</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            產品服務
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="#">基礎建材 </a>
+                                <ul class="dropdown-menu dropdown-submenu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">圓柱</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">景觀材</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">傳統板木</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">手工傢俱 </a>
+                                <ul class="dropdown-menu dropdown-submenu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">椅凳</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">木桌</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">精加工系列</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">藝品</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">裝潢工程 </a>
+                                <ul class="dropdown-menu dropdown-submenu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">手扶梯･牆壁･地板･天花板</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">古蹟用材 </a>
+                                <ul class="dropdown-menu dropdown-submenu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">古蹟用材</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">社口楊家古宅</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">台南水交社</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">木屋用材 </a>
+                                <ul class="dropdown-menu dropdown-submenu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">特殊樑柱料</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">特殊用材 </a>
+                                <ul class="dropdown-menu dropdown-submenu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">高壓墊木</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">雕塑用材</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">高科技用材</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">認證資訊</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href=".\machines.html#" id="navbarDarkDropdownMenuLink3"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            製程技術與機械
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink3">
+                            <li><a class="dropdown-item" href=".\machines.html#">大･中･小鋸床</a></li>
+                            <li><a class="dropdown-item" href=".\machines.html#">滾圓機</a></li>
+                            <li><a class="dropdown-item" href=".\machines.html#">四面鉋床</a></li>
+                            <li><a class="dropdown-item" href=".\machines.html#">大型磨砂機</a></li>
+                            <li><a class="dropdown-item" href=".\machines.html#">釘板木機</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href=".\solutions.html#" id="navbarDarkDropdownMenuLink4"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            工程案例
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink4">
+                            <li><a class="dropdown-item" href=".\solutions.html#">溪頭活動中心</a></li>
+                            <li><a class="dropdown-item" href=".\solutions.html#">溪頭妖怪村</a></li>
+                            <li><a class="dropdown-item" href=".\solutions.html#">瑞田國小看台</a></li>
+                            <li><a class="dropdown-item" href=".\solutions.html#">台南安定陳家</a></li>
+                            <li><a class="dropdown-item" href=".\solutions.html#">二水保安林野溪整治工程</a></li>
+                            <li><a class="dropdown-item" href=".\solutions.html#">坪頂森林步道整治工程</a></li>
+                            <li><a class="dropdown-item" href=".\solutions.html#">南投龍過脈森林步道工程</a></li>
+                            <li><a class="dropdown-item" href=".\solutions.html#">北港燈會作品</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">聯絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Portfolio-->
+    <section class="page-section bg-light" id="portfolio">
+        <h2 class="text-center mt-0">我們的產品</h2>
+        <hr class="divider" />
+        <div id="portfolio2">
+            <ul class="nav nav-tabs mb-3 justify-content-center" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-0-tab" data-bs-toggle="pill" data-bs-target="#pills-0"
+                        type="button" role="tab" aria-controls="pills-0" aria-selected="true">基礎建材</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-1-tab" data-bs-toggle="pill" data-bs-target="#pills-1"
+                        type="button" role="tab" aria-controls="pills-1" aria-selected="false">手工傢俱</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-2-tab" data-bs-toggle="pill" data-bs-target="#pills-2"
+                        type="button" role="tab" aria-controls="pills-2" aria-selected="false">藝品</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-3-tab" data-bs-toggle="pill" data-bs-target="#pills-3"
+                        type="button" role="tab" aria-controls="pills-3" aria-selected="false">裝潢工程</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-4-tab" data-bs-toggle="pill" data-bs-target="#pills-4"
+                        type="button" role="tab" aria-controls="pills-4" aria-selected="false">古積用材</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-5-tab" data-bs-toggle="pill" data-bs-target="#pills-5"
+                        type="button" role="tab" aria-controls="pills-5" aria-selected="false">木屋用材</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-6-tab" data-bs-toggle="pill" data-bs-target="#pills-6"
+                        type="button" role="tab" aria-controls="pills-6" aria-selected="false">特殊用材</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-7-tab" data-bs-toggle="pill" data-bs-target="#pills-7"
+                        type="button" role="tab" aria-controls="pills-7" aria-selected="false">認證資訊</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <!-- JavaScript will dynamically insert tab-pane elements here -->
+            </div>
+        </div>
+    </section>
+    <!-- Contact-->
+
+    <!-- Contact-->
+    <section class="page-section" id="contact">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 ">
+                <div class="col-lg-8 col-xl-6">
+                    <h5>聯絡資訊</h5>
+                    <ul>
+                        <li class="tel"><span>電話 : </span><a href="tel:+886-49-2752030">049-2752030</a></li>
+                        <li class="address"><span>住址 : </span><a
+                                href="https://goo.gl/maps/4wHzKp8W2wx5qHiT8">南投縣鹿谷鄉鹿谷村中正路二段302號</a></li>
+                        <li class="email"><span>信箱 : </span>&nbsp;<a
+                                href="mailto:woodwork@livemail.tw">woodwork@livemail.tw</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-8 col-xl-6">
+                    <h5>追蹤分享</h5>
+                    <div id="fans-follow">
+                        <a href="https://www.facebook.com/people/宏昌木材行/100057348704053/" class="btn btn-FB"
+                            role="button"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+                                </path>
+                            </svg> Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="bg-light py-5">
+        <div class="container px-4 px-lg-5">
+            <div class="small text-center text-muted">Copyright &copy; 2023 - 宏昌木材行</div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>
