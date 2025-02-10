@@ -96,6 +96,7 @@
                 tabItem.appendChild(tabButton);
                 tabList.appendChild(tabItem);
 
+                // Create tab content
                 const tabPane = document.createElement("div");
                 tabPane.className = `tab-pane fade ${index === 0 ? "show active" : ""}`;
                 tabPane.id = `pills-${index}`;
