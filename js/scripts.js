@@ -56,8 +56,4 @@ window.addEventListener('DOMContentLoaded', event => {
         elements: '#portfolio a.portfolio-box'
     });
 
-    const yearSpan = document.getElementById('current-year');
-    const currentYear = new Date().getFullYear();
-    yearSpan.textContent = currentYear;
-
 });
