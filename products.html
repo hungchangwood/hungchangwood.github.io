@@ -21,6 +21,15 @@
     <link href="css/styles.css" rel="stylesheet" />
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            fetch('contact.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('contact-placeholder').innerHTML = data;
+                });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
             const products = [
                 { folder: "基礎用材", images: ["圓柱.JPG", "景觀材.JPG", "板料.JPG", "板木.JPG", "角仔.JPG"] },
                 { folder: "手工傢俱", images: ["可調整沙灘椅.JPG", "手工沐浴桶-2.jpg", "木桌1.jpg", "木桌2.jpg", "木桌3-2.jpg", "木桌4.jpg", "木桌5.jpg"] },
@@ -260,37 +269,12 @@
             </div>
         </div>
     </section>
-    <!-- Contact-->
-
+    
     <!-- Contact-->
     <section class="page-section" id="contact">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 ">
-                <div class="col-lg-8 col-xl-6">
-                    <h5>聯絡資訊</h5>
-                    <ul>
-                        <li class="tel"><span>電話 : </span><a href="tel:+886-49-2752030">049-2752030</a></li>
-                        <li class="address"><span>住址 : </span><a
-                                href="https://goo.gl/maps/4wHzKp8W2wx5qHiT8">南投縣鹿谷鄉鹿谷村中正路二段302號</a></li>
-                        <li class="email"><span>信箱 : </span>&nbsp;<a
-                                href="mailto:woodwork@livemail.tw">woodwork@livemail.tw</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-8 col-xl-6">
-                    <h5>追蹤分享</h5>
-                    <div id="fans-follow">
-                        <a href="https://www.facebook.com/people/宏昌木材行/100057348704053/" class="btn btn-FB"
-                            role="button"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
-                                </path>
-                            </svg> Facebook</a>
-                    </div>
-                </div>
-            </div>
+        <div class="container px-4 px-lg-5" id="contact-placeholder">
+            <!-- JavaScript will dynamically insert contact information here -->
         </div>
-    </section>
     <!-- Footer-->
     <footer class="bg-light py-5">
         <div class="container px-4 px-lg-5">
