@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
     <title>宏昌木材行</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -19,87 +17,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar-placeholder').innerHTML = data;
-                });
-
-            fetch('contact.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('contact-placeholder').innerHTML = data;
-                });
-
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                });
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const solutions = [
-                { folder: "溪頭青年活動中心", images: ["入口1-2.jpg", "入口2-2.jpg", "入口3-2.jpg", "入口4-2.jpg", "入口5-2.jpg", "入口6-2.jpg", "大禮堂1-2.jpg", "大禮堂2-2.jpg", "大禮堂3-2.jpg", "大禮堂4-2.jpg", "大禮堂5-2.jpg", "大禮堂6-2.jpg", "大禮堂7-2.jpg", "客房1-2.jpg", "客房2-2.jpg", "客房3-2.jpg", "客房4-2.jpg", "客房5-2.jpg", "客房6-2.jpg", "客房7-2.jpg", "客房8-2.jpg", "客房9-2.jpg", "客房10-2.jpg", "客房11-2.jpg", "客房12-2.jpg", "客房13-2.jpg", "客房14-2.jpg", "客房15-2.jpg", "客房16-2.jpg", "客房17-2.jpg", "客房18-2.jpg", "客房19-2.jpg", "客房20-2.jpg", "客房21-2.jpg", "客房22-2.jpg", "客房23-2.jpg", "客房24-2.jpg", "廣場1-2.jpg", "廣場2-2.jpg", "廣場3-2.jpg", "廣場4-2.jpg", "遠眺.JPG", "餐廳1-2.jpg", "餐廳2-2.jpg", "餐廳3-2.jpg"] },
-                { folder: "溪頭妖怪村", images: ["前門鳥居.jpg", "妖怪村招牌裝潢.jpg", "店家裝潢1.jpg", "店家裝潢2.jpg", "店家裝潢3.jpg", "店家裝潢4.jpg", "店家裝潢5.jpg", "店家裝潢6.jpg", "店家裝潢7.jpg", "後門鳥居.jpg", "手扶梯.jpg", "日式古風酒桶裝潢.jpg", "舞台看台.jpg"] },
-                { folder: "瑞田國小看台", images: ["施工1.jpg", "施工2.jpg", "施工3.jpg", "施工4.jpg", "施工5.jpg", "施工6.jpg", "施工7.jpg", "施工8.jpg", "施工9.jpg", "施工10.jpg", "樓梯1.jpg", "樓梯2.jpg", "樓梯3.jpg", "樓梯4.jpg", "瑞田國小看台1.jpg", "瑞田國小看台2.jpg", "瑞田國小看台3.jpg", "瑞田國小看台4.jpg", "瑞田國小看台5.jpg", "瑞田國小看台6.jpg", "瑞田國小看台7.jpg"] },
-                { folder: "台南安定陳家", images: ["IMG_3675.JPG", "IMG_3677-2.jpg", "IMG_3678-2.jpg", "IMG_3681-2.jpg", "IMG_3684-2.jpg", "IMG_3686-2.jpg", "IMG_3691-2.jpg", "IMG_3704-2.jpg", "IMG_3711-2.jpg", "IMG_3715-2.jpg", "IMG_3721-2.jpg", "IMG_3725-2.jpg", "IMG_3734-2.jpg", "IMG_3744-2.jpg", "IMG_3748-2.jpg", "IMG_3750-2.jpg", "IMG_3752-2.jpg", "IMG_3670-2.jpg"] },
-                { folder: "二水保安林野溪整治工程", images: ["完工圖1.jpg", "完工圖2.JPG", "完工圖3.JPG", "完工圖4.JPG", "完工圖5.JPG", "完工圖6.JPG", "完工圖7.JPG", "完工圖8.JPG", "施工圖1.jpg", "施工圖2.jpg", "施工圖3.jpg", "施工圖4.jpg", "施工圖5.jpg", "施工圖6.jpg", "施工圖7.jpg", "施工圖8.jpg", "施工圖9.jpg", "施工圖10.jpg", "施工圖11.jpg", "施工圖12.jpg", "木材原料1.jpg", "木材原料2.jpg", "木材原料3.jpg", "木材檢驗.jpg"] },
-                { folder: "坪頂森林步道整治工程", images: ["完工圖1.jpg", "完工圖2.jpg", "完工圖3.jpg", "完工圖4.jpg", "完工圖5.jpg", "完工圖6.JPG", "完工圖7.JPG", "完工圖8-2.jpg", "完工圖9.JPG", "完工圖10.jpg", "完工圖11.JPG", "完工圖12.JPG", "完工圖13.JPG", "步道施工1.JPG", "步道施工2.JPG", "步道施工3.JPG", "步道施工4.JPG", "步道施工5.jpg", "步道施工6.JPG", "步道施工7.JPG", "步道施工8.jpg", "步道施工9.jpg", "步道施工10.jpg", "步道施工11.jpg", "步道施工12.jpg", "步道施工13.jpg", "步道施工14.jpg", "步道施工15.jpg", "步道施工16.jpg", "步道施工17.jpg", "步道施工18.jpg", "步道施工19.jpg", "步道施工20.jpg", "步道施工21.jpg", "步道施工22.jpg", "步道施工23.jpg", "步道施工24.jpg", "步道施工25.jpg", "步道施工26.JPG", "步道施工27.JPG", "步道施工28.JPG", "油漆工程1.JPG", "油漆工程2.JPG", "油漆工程3.JPG", "油漆工程4.JPG", "油漆工程5.JPG", "油漆工程6.JPG", "涼亭施工1.JPG", "涼亭施工2.JPG", "涼亭施工3.JPG", "涼亭施工4.JPG", "涼亭施工5.JPG", "涼亭施工6.JPG", "涼亭施工7.jpg", "涼亭施工8.jpg", "涼亭施工9.jpg", "涼亭施工10.JPG", "涼亭施工11.JPG", "涼亭施工12.jpg", "涼亭施工13.JPG", "涼亭施工14.jpg", "涼亭施工15.jpg", "涼亭施工16.jpg", "涼亭施工17.jpg", "涼亭施工18.jpg", "防腐工程1.jpg", "防腐工程2.jpg", "防腐工程3.jpg", "防腐工程4.jpg", "防腐工程5.jpg", "防腐工程6.jpg", "防腐工程7.jpg", "防腐工程8.jpg", "防腐工程9.jpg"] },
-                { folder: "北港燈會作品", images: ["404.jpg"] },
-                { folder: "鳳凰陳家老宅", images: ["01.jpeg", "02.jpeg", "03.jpeg", "04.jpeg", "05.jpeg", "06.jpeg"] },
-                { folder: "集集出張所", images: ["01.jpeg", "02.jpeg", "03.jpeg", "04.jpeg", "05.jpeg", "06.jpeg", "07.jpeg", "08.jpeg"] }
-            ];
-
-            const container = document.querySelector("#portfolio2 .tab-content");
-
-            solutions.forEach((solution, index) => {
-                const tabPane = document.createElement("div");
-                tabPane.className = `tab-pane fade ${index === 0 ? "show active" : ""}`;
-                tabPane.id = `pills-${index}`;
-                tabPane.setAttribute("role", "tabpanel");
-                tabPane.setAttribute("aria-labelledby", `pills-${index}-tab`);
-
-                const rowDiv = document.createElement("div");
-                rowDiv.className = "row g-0";
-
-                solution.images.forEach(image => {
-                    const colDiv = document.createElement("div");
-                    colDiv.className = "col-lg-4 col-sm-6";
-
-                    const anchor = document.createElement("a");
-                    anchor.className = "portfolio-box";
-                    anchor.href = `/solution_image/${solution.folder}/${image}`;
-                    anchor.title = image.split('.')[0];
-
-                    const img = document.createElement("img");
-                    img.className = "img-fluid";
-                    img.loading = "lazy";
-                    img.src = `/solution_image/${solution.folder}/${image}`;
-                    img.alt = "...";
-
-                    const captionDiv = document.createElement("div");
-                    captionDiv.className = "portfolio-box-caption";
-                    
-                    anchor.appendChild(img);
-                    anchor.appendChild(captionDiv);
-                    colDiv.appendChild(anchor);
-                    rowDiv.appendChild(colDiv);
-                });
-
-                tabPane.appendChild(rowDiv);
-                container.appendChild(tabPane);
-            });
-        });
-    </script>
 </head>
 
 <body id="page-top">
     <!-- Navigation-->
     <div id="navbar-placeholder"></div>
+
     <!-- Portfolio-->
     <section class="page-section bg-light" id="portfolio">
         <h2 class="text-center mt-0">工程案例</h2>
@@ -143,17 +66,93 @@
                         type="button" role="tab" aria-controls="pills-8" aria-selected="false">集集鎮樟腦出張所建築群修復</button>
                 </li>
             </ul>
-            <div class="tab-content" id="pills-tabContent">
-                <!-- JavaScript will dynamically insert tab-pane elements here -->
-            </div>
+            <div class="tab-content" id="pills-tabContent"></div>
         </div>
     </section>
-    
+
     <!-- Contact-->
     <div id="contact-placeholder"></div>
     <!-- Footer-->
     <div id="footer-placeholder"></div>
-    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                });
+
+            fetch('contact.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('contact-placeholder').innerHTML = data;
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const solutions = [
+                { folder: "溪頭青年活動中心", images: ["入口1-2.jpg", "入口2-2.jpg", "入口3-2.jpg", "入口4-2.jpg", "入口5-2.jpg", "入口6-2.jpg", "大禮堂1-2.jpg", "大禮堂2-2.jpg", "大禮堂3-2.jpg", "大禮堂4-2.jpg", "大禮堂5-2.jpg", "大禮堂6-2.jpg", "大禮堂7-2.jpg", "客房1-2.jpg", "客房2-2.jpg", "客房3-2.jpg", "客房4-2.jpg", "客房5-2.jpg", "客房6-2.jpg", "客房7-2.jpg", "客房8-2.jpg", "客房9-2.jpg", "客房10-2.jpg", "客房11-2.jpg", "客房12-2.jpg", "客房13-2.jpg", "客房14-2.jpg", "客房15-2.jpg", "客房16-2.jpg", "客房17-2.jpg", "客房18-2.jpg", "客房19-2.jpg", "客房20-2.jpg", "客房21-2.jpg", "客房22-2.jpg", "客房23-2.jpg", "客房24-2.jpg", "廣場1-2.jpg", "廣場2-2.jpg", "廣場3-2.jpg", "廣場4-2.jpg", "遠眺.JPG", "餐廳1-2.jpg", "餐廳2-2.jpg", "餐廳3-2.jpg"] },
+                { folder: "溪頭妖怪村", images: ["前門鳥居.jpg", "妖怪村招牌裝潢.jpg", "店家裝潢1.jpg", "店家裝潢2.jpg", "店家裝潢3.jpg", "店家裝潢4.jpg", "店家裝潢5.jpg", "店家裝潢6.jpg", "店家裝潢7.jpg", "後門鳥居.jpg", "手扶梯.jpg", "日式古風酒桶裝潢.jpg", "舞台看台.jpg"] },
+                { folder: "瑞田國小看台", images: ["施工1.jpg", "施工2.jpg", "施工3.jpg", "施工4.jpg", "施工5.jpg", "施工6.jpg", "施工7.jpg", "施工8.jpg", "施工9.jpg", "施工10.jpg", "樓梯1.jpg", "樓梯2.jpg", "樓梯3.jpg", "樓梯4.jpg", "瑞田國小看台1.jpg", "瑞田國小看台2.jpg", "瑞田國小看台3.jpg", "瑞田國小看台4.jpg", "瑞田國小看台5.jpg", "瑞田國小看台6.jpg", "瑞田國小看台7.jpg"] },
+                { folder: "台南安定陳家", images: ["IMG_3675.JPG", "IMG_3677-2.jpg", "IMG_3678-2.jpg", "IMG_3681-2.jpg", "IMG_3684-2.jpg", "IMG_3686-2.jpg", "IMG_3691-2.jpg", "IMG_3704-2.jpg", "IMG_3711-2.jpg", "IMG_3715-2.jpg", "IMG_3721-2.jpg", "IMG_3725-2.jpg", "IMG_3734-2.jpg", "IMG_3744-2.jpg", "IMG_3748-2.jpg", "IMG_3750-2.jpg", "IMG_3752-2.jpg", "IMG_3670-2.jpg"] },
+                { folder: "二水保安林野溪整治工程", images: ["完工圖1.jpg", "完工圖2.JPG", "完工圖3.JPG", "完工圖4.JPG", "完工圖5.JPG", "完工圖6.JPG", "完工圖7.JPG", "完工圖8.JPG", "施工圖1.jpg", "施工圖2.jpg", "施工圖3.jpg", "施工圖4.jpg", "施工圖5.jpg", "施工圖6.jpg", "施工圖7.jpg", "施工圖8.jpg", "施工圖9.jpg", "施工圖10.jpg", "施工圖11.jpg", "施工圖12.jpg", "木材原料1.jpg", "木材原料2.jpg", "木材原料3.jpg", "木材檢驗.jpg"] },
+                { folder: "坪頂森林步道整治工程", images: ["完工圖1.jpg", "完工圖2.jpg", "完工圖3.jpg", "完工圖4.jpg", "完工圖5.jpg", "完工圖6.JPG", "完工圖7.JPG", "完工圖8-2.jpg", "完工圖9.JPG", "完工圖10.jpg", "完工圖11.JPG", "完工圖12.JPG", "完工圖13.JPG", "步道施工1.JPG", "步道施工2.JPG", "步道施工3.JPG", "步道施工4.JPG", "步道施工5.jpg", "步道施工6.JPG", "步道施工7.JPG", "步道施工8.jpg", "步道施工9.jpg", "步道施工10.jpg", "步道施工11.jpg", "步道施工12.jpg", "步道施工13.jpg", "步道施工14.jpg", "步道施工15.jpg", "步道施工16.jpg", "步道施工17.jpg", "步道施工18.jpg", "步道施工19.jpg", "步道施工20.jpg", "步道施工21.jpg", "步道施工22.jpg", "步道施工23.jpg", "步道施工24.jpg", "步道施工25.jpg", "步道施工26.JPG", "步道施工27.JPG", "步道施工28.JPG", "油漆工程1.JPG", "油漆工程2.JPG", "油漆工程3.JPG", "油漆工程4.JPG", "油漆工程5.JPG", "油漆工程6.JPG", "涼亭施工1.JPG", "涼亭施工2.JPG", "涼亭施工3.JPG", "涼亭施工4.JPG", "涼亭施工5.JPG", "涼亭施工6.JPG", "涼亭施工7.jpg", "涼亭施工8.jpg", "涼亭施工9.jpg", "涼亭施工10.JPG", "涼亭施工11.JPG", "涼亭施工12.jpg", "涼亭施工13.JPG", "涼亭施工14.jpg", "涼亭施工15.jpg", "涼亭施工16.jpg", "涼亭施工17.jpg", "涼亭施工18.jpg", "防腐工程1.jpg", "防腐工程2.jpg", "防腐工程3.jpg", "防腐工程4.jpg", "防腐工程5.jpg", "防腐工程6.jpg", "防腐工程7.jpg", "防腐工程8.jpg", "防腐工程9.jpg"] },
+                { folder: "北港燈會作品", images: ["404.jpg"] },
+                { folder: "鳳凰陳家老宅", images: ["01.jpeg", "02.jpeg", "03.jpeg", "04.jpeg", "05.jpeg", "06.jpeg"] },
+                { folder: "集集出張所", images: ["01.jpeg", "02.jpeg", "03.jpeg", "04.jpeg", "05.jpeg", "06.jpeg", "07.jpeg", "08.jpeg"] }
+            ];
+
+            const container = document.querySelector("#portfolio2 .tab-content");
+
+            solutions.forEach((solution, index) => {
+                const tabPane = document.createElement("div");
+                tabPane.className = `tab-pane fade ${index === 0 ? "show active" : ""}`;
+                tabPane.id = `pills-${index}`;
+                tabPane.setAttribute("role", "tabpanel");
+                tabPane.setAttribute("aria-labelledby", `pills-${index}-tab`);
+
+                const rowDiv = document.createElement("div");
+                rowDiv.className = "row g-0";
+
+                solution.images.forEach(image => {
+                    const colDiv = document.createElement("div");
+                    colDiv.className = "col-lg-4 col-sm-6";
+
+                    const anchor = document.createElement("a");
+                    anchor.className = "portfolio-box";
+                    anchor.href = `/solution_image/${solution.folder}/${image}`;
+                    anchor.title = image.split('.')[0];
+
+                    const img = document.createElement("img");
+                    img.className = "img-fluid";
+                    img.loading = "lazy";
+                    img.src = `/solution_image/${solution.folder}/${image}`;
+                    img.alt = "...";
+
+                    const captionDiv = document.createElement("div");
+                    captionDiv.className = "portfolio-box-caption";
+
+                    anchor.appendChild(img);
+                    anchor.appendChild(captionDiv);
+                    colDiv.appendChild(anchor);
+                    rowDiv.appendChild(colDiv);
+                });
+
+                tabPane.appendChild(rowDiv);
+                container.appendChild(tabPane);
+            });
+        });
+    </script>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SimpleLightbox plugin JS-->

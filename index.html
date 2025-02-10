@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
     <title>宏昌木材行</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -19,27 +17,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar-placeholder').innerHTML = data;
-                });
-
-            fetch('contact.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('contact-placeholder').innerHTML = data;
-                });
-
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                });
-        });
-    </script>
 </head>
 
 <body id="page-top">
@@ -206,9 +183,9 @@
                         <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="...">
                         <h4>張志常</h4>
                         <p class="text-muted">榮譽董事</p>
-                        <a class="btn btn-light btn-social mx-2" href="#!" aria-label="榮譽董事e">
+                        <a class="btn btn-light btn-social mx-2" href="#!" aria-label="榮譽董事">
                             曾為八二三砲戰榮民的他，曾擔任竹山義警中隊隊長、南投縣木材商業同業公會理事長等等，現已90歲高齡的他有70年以上的豐富木材加工相關經驗及精湛的磨鋸技術，目前仍為本行諮詢顧問。
-                            <!-- <i class="fab fa-twitter"></i> Font Awesome fontawesome.com --></a>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -218,7 +195,7 @@
                         <p class="text-muted">現任董事長</p>
                         <a class="btn btn-light btn-social mx-2" href="#!" aria-label="現任董事長">
                             曾為全台國寶級木材紅豆杉最大銷售商，也是原木加工先進製程的開發者，取代古早技術，引進許多大型設備例如超長滾圓機、大型磨砂機、四面鉋床等等，喜歡挑戰高難度原木製程。
-                            <!-- <i class="fab fa-twitter"></i> Font Awesome fontawesome.com --></a>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -228,16 +205,11 @@
                         <p class="text-muted">全球事業部執行副總裁</p>
                         <a class="btn btn-light btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile">
                             前任台積電，和碩總工程師，日本海外發展顧問，現任宏昌木業全球事業部執行副總裁。
-                            <!-- <i class="fab fa-twitter"></i> Font Awesome fontawesome.com --></a>
+                        </a>
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-                        laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
-            </div> -->
+
         </div>
     </section>
     <!-- Contact-->
@@ -280,16 +252,36 @@
     </section>
     <!-- Footer-->
     <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                });
+
+            fetch('contact.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('contact-placeholder').innerHTML = data;
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        });
+    </script>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SimpleLightbox plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 
