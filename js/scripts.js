@@ -78,4 +78,68 @@ document.addEventListener("DOMContentLoaded", function () {
             const currentYear = new Date().getFullYear();
             yearSpan.textContent = currentYear;
         });
+
+
+    const tabList = document.querySelector("#pills-tab");
+    const container = document.querySelector("#portfolio2 .tab-content");
+    if (Array.isArray(tab_datas)) {
+        tab_datas.forEach((tab_data, index) => {
+
+            // Create tab buttons
+            const tabItem = document.createElement("li");
+            tabItem.className = "nav-item";
+            tabItem.setAttribute("role", "presentation");
+
+            const tabButton = document.createElement("button");
+            tabButton.className = `nav-link ${index === 0 ? "active" : ""}`;
+            tabButton.id = `pills-${index}-tab`;
+            tabButton.setAttribute("data-bs-toggle", "pill");
+            tabButton.setAttribute("data-bs-target", `#pills-${index}`);
+            tabButton.setAttribute("type", "button");
+            tabButton.setAttribute("role", "tab");
+            tabButton.setAttribute("aria-controls", `pills-${index}`);
+            tabButton.setAttribute("aria-selected", index === 0 ? "true" : "false");
+            tabButton.textContent = tab_data.folder;
+
+            tabItem.appendChild(tabButton);
+            tabList.appendChild(tabItem);
+
+            // Create tab content
+            const tabPane = document.createElement("div");
+            tabPane.className = `tab-pane fade ${index === 0 ? "show active" : ""}`;
+            tabPane.id = `pills-${index}`;
+            tabPane.setAttribute("role", "tabpanel");
+            tabPane.setAttribute("aria-labelledby", `pills-${index}-tab`);
+
+            const rowDiv = document.createElement("div");
+            rowDiv.className = "row g-0";
+
+            tab_data.images.forEach(image => {
+                const colDiv = document.createElement("div");
+                colDiv.className = "col-lg-4 col-sm-6";
+
+                const anchor = document.createElement("a");
+                anchor.className = "portfolio-box";
+                anchor.href = `/${root_folder}/${tab_data.folder}/${image}`;
+                anchor.title = image.split('.')[0];
+
+                const img = document.createElement("img");
+                img.className = "img-fluid";
+                img.loading = "lazy";
+                img.src = `/${root_folder}/${tab_data.folder}/${image}`;
+                img.alt = "...";
+
+                const captionDiv = document.createElement("div");
+                captionDiv.className = "portfolio-box-caption";
+
+                anchor.appendChild(img);
+                anchor.appendChild(captionDiv);
+                colDiv.appendChild(anchor);
+                rowDiv.appendChild(colDiv);
+            });
+
+            tabPane.appendChild(rowDiv);
+            container.appendChild(tabPane);
+        });
+    }
 });

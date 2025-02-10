@@ -38,80 +38,17 @@
     <div id="footer-placeholder"></div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const products = [
-                { folder: "基礎用材", images: ["圓柱.JPG", "景觀材.JPG", "板料.JPG", "板木.JPG", "角仔.JPG"] },
-                { folder: "手工傢俱", images: ["可調整沙灘椅.JPG", "手工沐浴桶-2.jpg", "木桌1.jpg", "木桌2.jpg", "木桌3-2.jpg", "木桌4.jpg", "木桌5.jpg"] },
-                { folder: "藝品", images: ["原木吧檯.jpg", "原木大椅凳.jpg", "古風桌椅.jpg", "古風鎖櫃.jpg", "子孫滿堂.jpg", "子孫滿堂2.jpg", "小椅凳.jpg", "小豬.JPG", "小豬2.JPG", "木枕.jpg", "樹瘤屏風.JPG", "樹瘤屏風2.jpg", "毛筆.JPG", "聚寶盆.jpg", "衛生紙盒-2.jpg", "觀音.jpg", "象雕課桌.jpg", "財神爺.jpg", "財神爺2.jpg"] },
-                { folder: "裝潢工程", images: ["天花板.jpg", "室內窗沿.jpg", "房間1.jpg", "房間2.JPG", "室外牆壁.jpg", "紅豆杉手扶梯.jpg"] },
-                { folder: "古蹟用材", images: ["古蹟用材1.JPG", "古蹟用材2.JPG", "古蹟用材3.JPG", "楊家古宅1.JPG", "楊家古宅2.JPG", "楊家古宅3.JPG", "楊家古宅4.jpg", "楊家古宅5.jpg", "楊家古宅6.jpg", "水交社1.JPG", "水交社2.JPG", "水交社3.JPG", "水交社4.jpg", "水交社5.JPG", "水交社6.JPG", "水交社7.jpg", "水交社8.JPG"] },
-                { folder: "木屋用材", images: ["特殊樑柱材1.jpg", "特殊樑柱材2.jpg", "特殊樑柱材3.jpg", "特殊樑柱材4.jpg"] },
-                { folder: "特殊用材", images: ["高壓墊木.jpg"] },
-                { folder: "認證資訊", images: ["認證書1.jpeg", "認證書2.jpeg"] }
-            ];
-
-            const tabList = document.querySelector("#pills-tab");
-            const container = document.querySelector("#portfolio2 .tab-content");
-
-            products.forEach((product, index) => {
-
-                // Create tab buttons
-                const tabItem = document.createElement("li");
-                tabItem.className = "nav-item";
-                tabItem.setAttribute("role", "presentation");
-
-                const tabButton = document.createElement("button");
-                tabButton.className = `nav-link ${index === 0 ? "active" : ""}`;
-                tabButton.id = `pills-${index}-tab`;
-                tabButton.setAttribute("data-bs-toggle", "pill");
-                tabButton.setAttribute("data-bs-target", `#pills-${index}`);
-                tabButton.setAttribute("type", "button");
-                tabButton.setAttribute("role", "tab");
-                tabButton.setAttribute("aria-controls", `pills-${index}`);
-                tabButton.setAttribute("aria-selected", index === 0 ? "true" : "false");
-                tabButton.textContent = product.folder;
-
-                tabItem.appendChild(tabButton);
-                tabList.appendChild(tabItem);
-
-                // Create tab content
-                const tabPane = document.createElement("div");
-                tabPane.className = `tab-pane fade ${index === 0 ? "show active" : ""}`;
-                tabPane.id = `pills-${index}`;
-                tabPane.setAttribute("role", "tabpanel");
-                tabPane.setAttribute("aria-labelledby", `pills-${index}-tab`);
-
-                const rowDiv = document.createElement("div");
-                rowDiv.className = "row g-0";
-
-                product.images.forEach(image => {
-                    const colDiv = document.createElement("div");
-                    colDiv.className = "col-lg-4 col-sm-6";
-
-                    const anchor = document.createElement("a");
-                    anchor.className = "portfolio-box";
-                    anchor.href = `/products_image/${product.folder}/${image}`;
-                    anchor.title = image.split('.')[0];
-
-                    const img = document.createElement("img");
-                    img.className = "img-fluid";
-                    img.loading = "lazy";
-                    img.src = `/products_image/${product.folder}/${image}`;
-                    img.alt = "...";
-
-                    const captionDiv = document.createElement("div");
-                    captionDiv.className = "portfolio-box-caption";
-
-                    anchor.appendChild(img);
-                    anchor.appendChild(captionDiv);
-                    colDiv.appendChild(anchor);
-                    rowDiv.appendChild(colDiv);
-                });
-
-                tabPane.appendChild(rowDiv);
-                container.appendChild(tabPane);
-            });
-        });
+        const root_folder = "products_image";
+        const tab_datas = [
+            { folder: "基礎用材", images: ["圓柱.JPG", "景觀材.JPG", "板料.JPG", "板木.JPG", "角仔.JPG"] },
+            { folder: "手工傢俱", images: ["可調整沙灘椅.JPG", "手工沐浴桶-2.jpg", "木桌1.jpg", "木桌2.jpg", "木桌3-2.jpg", "木桌4.jpg", "木桌5.jpg"] },
+            { folder: "藝品", images: ["原木吧檯.jpg", "原木大椅凳.jpg", "古風桌椅.jpg", "古風鎖櫃.jpg", "子孫滿堂.jpg", "子孫滿堂2.jpg", "小椅凳.jpg", "小豬.JPG", "小豬2.JPG", "木枕.jpg", "樹瘤屏風.JPG", "樹瘤屏風2.jpg", "毛筆.JPG", "聚寶盆.jpg", "衛生紙盒-2.jpg", "觀音.jpg", "象雕課桌.jpg", "財神爺.jpg", "財神爺2.jpg"] },
+            { folder: "裝潢工程", images: ["天花板.jpg", "室內窗沿.jpg", "房間1.jpg", "房間2.JPG", "室外牆壁.jpg", "紅豆杉手扶梯.jpg"] },
+            { folder: "古蹟用材", images: ["古蹟用材1.JPG", "古蹟用材2.JPG", "古蹟用材3.JPG", "楊家古宅1.JPG", "楊家古宅2.JPG", "楊家古宅3.JPG", "楊家古宅4.jpg", "楊家古宅5.jpg", "楊家古宅6.jpg", "水交社1.JPG", "水交社2.JPG", "水交社3.JPG", "水交社4.jpg", "水交社5.JPG", "水交社6.JPG", "水交社7.jpg", "水交社8.JPG"] },
+            { folder: "木屋用材", images: ["特殊樑柱材1.jpg", "特殊樑柱材2.jpg", "特殊樑柱材3.jpg", "特殊樑柱材4.jpg"] },
+            { folder: "特殊用材", images: ["高壓墊木.jpg"] },
+            { folder: "認證資訊", images: ["認證書1.jpeg", "認證書2.jpeg"] }
+        ];
     </script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
