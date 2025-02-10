@@ -1,5 +1,12 @@
 <footer class="bg-light py-5">
     <div class="container px-4 px-lg-5">
-        <div class="small text-center text-muted">Copyright &copy; <script>document.write(new Date().getFullYear());</script> - 宏昌木材行</div>
+        <div class="small text-center text-muted">Copyright &copy; <span id="current-year"></span> - 宏昌木材行</div>
     </div>
 </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const yearSpan = document.getElementById('current-year');
+        const currentYear = new Date().getFullYear();
+        yearSpan.textContent = currentYear;
+    });
+</script>
