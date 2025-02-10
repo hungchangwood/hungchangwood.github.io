@@ -19,154 +19,32 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                });
+
+            fetch('contact.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('contact-placeholder').innerHTML = data;
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        });
+    </script>
 </head>
 
 <body id="page-top">
     <!-- Navigation-->
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" id="mainNav">
-        <div class="container-fluid px-4 px-lg-5">
-            <a class="navbar-brand" href="index.html#page-top">宏昌木材行</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive2" aria-controls="navbarResponsive2" aria-expanded="false"
-                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive2">
-                <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink1" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            關於宏昌
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink1">
-                            <li><a class="dropdown-item" href="index.html#about">宏昌歷史</a></li>
-                            <li><a class="dropdown-item" href="index.html#services">經營理念</a></li>
-                            <li><a class="dropdown-item" href="index.html#team">經營團隊</a></li>
-
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            產品服務
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li>
-                                <a class="dropdown-item" href=".\products.html#">基礎建材 </a>
-                                <ul class="dropdown-menu dropdown-submenu">
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">圓柱</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">景觀材</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">傳統板木</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href=".\products.html#">手工傢俱 </a>
-                                <ul class="dropdown-menu dropdown-submenu">
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">椅凳</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">木桌</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">精加工系列</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href=".\products.html#">藝品</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href=".\products.html#">裝潢工程 </a>
-                                <ul class="dropdown-menu dropdown-submenu">
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">手扶梯･牆壁･地板･天花板</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href=".\products.html#">古蹟用材 </a>
-                                <ul class="dropdown-menu dropdown-submenu">
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">古蹟用材</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">社口楊家古宅</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">台南水交社</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href=".\products.html#">木屋用材 </a>
-                                <ul class="dropdown-menu dropdown-submenu">
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">特殊樑柱料</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">特殊用材 </a>
-                                <ul class="dropdown-menu dropdown-submenu">
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">高壓墊木</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">雕塑用材</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href=".\products.html#">高科技用材</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href=".\products.html#">認證資訊</a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink3" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            製程技術與機械
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink3">
-                            <li><a class="dropdown-item" href="#">大･中･小鋸床</a></li>
-                            <li><a class="dropdown-item" href="#">滾圓機</a></li>
-                            <li><a class="dropdown-item" href="#">四面鉋床</a></li>
-                            <li><a class="dropdown-item" href="#">大型磨砂機</a></li>
-                            <li><a class="dropdown-item" href="#">釘板木機</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href=".\solutions.html#" id="navbarDarkDropdownMenuLink4"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            工程案例
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink4">
-                            <li><a class="dropdown-item" href=".\solutions.html#">溪頭活動中心</a></li>
-                            <li><a class="dropdown-item" href=".\solutions.html#">溪頭妖怪村</a></li>
-                            <li><a class="dropdown-item" href=".\solutions.html#">瑞田國小看台</a></li>
-                            <li><a class="dropdown-item" href=".\solutions.html#">台南安定陳家</a></li>
-                            <li><a class="dropdown-item" href=".\solutions.html#">二水保安林野溪整治工程</a></li>
-                            <li><a class="dropdown-item" href=".\solutions.html#">坪頂森林步道整治工程</a></li>
-                            <li><a class="dropdown-item" href=".\solutions.html#">南投龍過脈森林步道工程</a></li>
-                            <li><a class="dropdown-item" href=".\solutions.html#">北港燈會作品</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">聯絡我們</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
     <!-- Portfolio-->
 
     <section class="page-section bg-light" id="portfolio">
@@ -359,40 +237,11 @@
     </section>
 
     <!-- Contact-->
-    <section class="page-section" id="contact">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 ">
-                <div class="col-lg-8 col-xl-6">
-                    <h5>聯絡資訊</h5>
-                    <ul>
-                        <li class="tel"><span>電話 : </span><a href="tel:+886-49-2752030">049-2752030</a></li>
-                        <li class="address"><span>住址 : </span><a
-                                href="https://goo.gl/maps/4wHzKp8W2wx5qHiT8">南投縣鹿谷鄉鹿谷村中正路二段302號</a></li>
-                        <li class="email"><span>信箱 : </span>&nbsp;<a
-                                href="mailto:woodwork@livemail.tw">woodwork@livemail.tw</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-8 col-xl-6">
-                    <h5>追蹤分享</h5>
-                    <div id="fans-follow">
-                        <a href="https://www.facebook.com/people/宏昌木材行/100057348704053/" class="btn btn-FB"
-                            role="button"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
-                                </path>
-                            </svg> Facebook</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div id="contact-placeholder"></div>
+    
     <!-- Footer-->
-    <footer class="bg-light py-5">
-        <div class="container px-4 px-lg-5">
-            <div class="small text-center text-muted">Copyright &copy; 2023 - 宏昌木材行</div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SimpleLightbox plugin JS-->
