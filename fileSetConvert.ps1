@@ -5,8 +5,6 @@ $folderPath = Read-Host -Prompt "Folder Path"
 $folderName = Split-Path -Leaf $folderPath
 
 # 取得資料夾內的檔案名稱
-# $images = Get-ChildItem -Path $folderPath | ForEach-Object { $_.Name }
-
 $images = Get-ChildItem -Path $folderPath | Sort-Object Name | ForEach-Object { $_.Name }
 
 
