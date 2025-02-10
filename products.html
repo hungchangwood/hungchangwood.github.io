@@ -21,27 +21,6 @@
     <link href="css/styles.css" rel="stylesheet" />
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            fetch('navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar-placeholder').innerHTML = data;
-                });
-
-            fetch('contact.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('contact-placeholder').innerHTML = data;
-                });
-
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                });
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
             const products = [
                 { folder: "基礎用材", images: ["圓柱.JPG", "景觀材.JPG", "板料.JPG", "板木.JPG", "角仔.JPG"] },
                 { folder: "手工傢俱", images: ["可調整沙灘椅.JPG", "手工沐浴桶-2.jpg", "木桌1.jpg", "木桌2.jpg", "木桌3-2.jpg", "木桌4.jpg", "木桌5.jpg"] },
@@ -148,6 +127,29 @@
     <div id="contact-placeholder"></div>
     <!-- Footer-->
     <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                });
+
+            fetch('contact.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('contact-placeholder').innerHTML = data;
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        });
+    </script>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SimpleLightbox plugin JS-->
